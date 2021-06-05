@@ -41,7 +41,7 @@ ___
 https://docs.google.com/spreadsheets/d/1hzAbyxjLovcge9Ddhbx5SSFlFNI004E6HDnDMMqzIlk/edit?usp=sharing
 ___
 ## ワイヤーフレーム
-https://cacoo.com/diagrams/Kkj8rj5SmGXuR4hc/193DD
+https://cacoo.com/diagrams/Kkj8rj5SmGXuR4hc-193DD.png
 ___
 ## ER図
 <img src="./app/assets/images/ER_diagram.png" alt="ER図" width='650px'>
