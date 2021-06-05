@@ -45,6 +45,6 @@ https://cacoo.com/diagrams/Kkj8rj5SmGXuR4hc/193DD
 ___
 ## ER図
 <img src="./app/assets/images/ER_diagram.png" alt="ER図" width='650px'>
-___
+
 ## 画面遷移図
 <img src="./app/assets/images/Screen_transition_diagram.png" alt="画面遷移図" width='650px'>
