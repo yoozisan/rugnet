@@ -16,6 +16,7 @@ ___
 ## 開発言語
 - Ruby2.6.5
 - Rails5.2.5
+- PostgreSQL13.2
 ___
 ## 就業Termの技術
 - devise
@@ -46,4 +47,4 @@ ___
 <img src="./app/assets/images/ER_diagram.png" alt="ER図" width='650px'>
 
 ## 画面遷移図
-<img src="./app/assets/images/Screen_transition_diagram.png" alt="画面遷移図" width='650px'>
+<img src="./app/assets/images/Screen_transition.png" alt="画面遷移図" width='650px'>
