@@ -1,11 +1,10 @@
 # README
 ___
 ## 概要
-様々な地域から生徒が集まる団体をサポートするSNSアプリケーション。  
-練習に参加する際に紙で提出していた健康情報をアプリ上で運用することで、  
+練習に参加する日に紙で提出していた健康情報をアプリ上で記録することで、  
 管理効率upとペーパーレス化を実現。  
-運営から試合やイベントのお知らせを掲示板で確認でき、スクール生の親同士が  
-子供の成長記録を互いに閲覧しながら交流するきっかけを与えてくれるツール。
+また、ユーザー（子供の親）が子供の練習記録等を互いに閲覧することで、  
+交流するきっかけを与えてくれるツール。
 ___
 ## 開発背景
 ラグビースクールのコーチをやっており、屋外での紙のやり取りで健康管理を実施している  
@@ -35,10 +34,10 @@ ___
 ```
 ___
 ## カタログ設計
-https://docs.google.com/spreadsheets/d/1Y96PhrgZGLzTAPWC_ZkVKqAWRHPDSI7Sv8s2sc_hHQo/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1Zr4o7rt2UtdrlccJ8jZYKnJqgq1-kmaxyFQkEtXPouQ/edit?usp=sharing
 ___
 ## テーブル定義書
-https://docs.google.com/spreadsheets/d/1hzAbyxjLovcge9Ddhbx5SSFlFNI004E6HDnDMMqzIlk/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1T1s24NbtD3cWfBBjiCXwPxMKUBPseSvci-s_9-19JJQ/edit?usp=sharing
 ___
 ## ワイヤーフレーム
 https://cacoo.com/diagrams/Kkj8rj5SmGXuR4hc-193DD.png
