@@ -41,10 +41,10 @@ ___
 https://docs.google.com/spreadsheets/d/1T1s24NbtD3cWfBBjiCXwPxMKUBPseSvci-s_9-19JJQ/edit?usp=sharing
 ___
 ## ワイヤーフレーム
-https://cacoo.com/diagrams/Kkj8rj5SmGXuR4hc-193DD.png
+https://cacoo.com/diagrams/9lP8X9HudchZ2tGf-32E33.png
 ___
 ## ER図
-<img src="./app/assets/images/ER.png" alt="ER図" width='650px'>
+<img src="./app/assets/images/ER_dia.png" alt="ER図" width='650px'>
 
 ## 画面遷移図
-<img src="./app/assets/images/transition.png" alt="画面遷移図" width='650px'>
+<img src="./app/assets/images/Screen.png" alt="画面遷移図" width='650px'>
