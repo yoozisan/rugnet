@@ -1,4 +1,5 @@
 <h1>日記一覧</h1>
+<p><%= notice %></p>
 <table>
   <tr>
     <th>タイトル</th>
@@ -10,6 +11,7 @@
     <td><%= post.content %></td>
     <td><%= link_to '詳細を確認する', post_path(post.id) %></td>
     <td><%= link_to "日記を編集する", edit_post_path(post.id) %></td>
+    <td><%= link_to '日記を削除する', post_path(post.id), method: :delete %></td>
   </tr>
 <% end %>
 </table>
