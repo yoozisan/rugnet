@@ -10,13 +10,13 @@
   </div>
 <% end %>
   <div class="post_title">
-    <%= form.label :title %>
+    <%= form.label :title %><br>
     <%= form.text_field :title %>
   </div>
   <div class="post_content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
+    <%= form.label :content %><br>
+    <%= form.text_area :content %>
+  </div><br>
   <%= form.submit %>
 <% end %>
 <%= link_to "ブログ一覧画面にもどる", posts_path %>
