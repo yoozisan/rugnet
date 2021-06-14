@@ -16,7 +16,3 @@
 <% end %>
 </table>
 <%= link_to '新しく日記を投稿する', new_post_path %><br>
-
-<% if current_user.try(:admin?) %>
- <%= link_to t('view.admin_dashboard'), rails_admin_path, class: "button_text_color" %>
-<% end %>
