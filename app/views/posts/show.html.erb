@@ -1,0 +1,14 @@
+<h1>日記詳細画面</h1>
+<p>タイトル: <%= @post.title %></p>
+<p>内容: <%= @post.content %></p>
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag (@post.image.to_s) %>
+</p>
+<% if @post.user.id == current_user.id %>
+<%= link_to "編集", edit_post_path(@post), data: { confirm: '本当に編集していいですか？' } %>
+<%= link_to '削除', post_path(@post), method: :delete, data: { confirm: '本当に削除していいですか？' } %>
+<% end %>
+<%= link_to 'Back', posts_path %>
+<%= link_to '一覧に戻る', posts_path %>

@@ -1,5 +1,34 @@
 <!DOCTYPE html>
 <html>
+<header>
+  <nav class="navbar navbar-expand navbar-light">
+    <%= link_to "Rugnet", root_path, class: 'navbar-brand' %>
+    <div id="Navber">
+      <ul class="navbar-nav">
+        <% if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to 'アカウント編集', edit_user_registration_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          </li>
+      <% else %>
+          <li class="nav-item active">
+            <%= link_to "新規登録", new_user_registration_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to "ログイン", new_user_session_path, class: 'nav-link' %>
+          </li>
+        <% end %>
+        <li class="nav-item active">
+          <% if current_user.try(:admin?) %>
+            <%= link_to "管理者画面", rails_admin_path, class: 'nav-link' %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
   <head>
     <title>RugnetApp</title>
     <%= csrf_meta_tags %>
@@ -10,6 +39,14 @@
   </head>
 
   <body>
+    <% if notice %>
+      <p class="alert alert-notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-error"><%= alert %></p>
+    <% end %>
+    <div class="container-fluid py-4 <%= devise_controller? ? 'mw-md' : 'mw-xl' %>">
     <%= yield %>
+    </div>
   </body>
 </html>
