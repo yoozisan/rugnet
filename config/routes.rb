@@ -4,7 +4,8 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
   devise_for :users, controllers: {registrations: 'users/registrations',passwords: 'users/passwords'}
-  root 'posts#index'
+  root 'tops#index'
+  get "tops/index"
   resources :posts do
     collection do
       post :confirm
