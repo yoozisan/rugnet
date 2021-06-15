@@ -4,7 +4,7 @@
 <p>内容: <%= @post.content %></p>
 <p id="notice"><%= notice %></p>
 <p>
-  <strong>Image:</strong>
+  <strong>画像:</strong>
   <%= image_tag (@post.image.to_s) %>
 </p>
 <% if @post.user.id == current_user.id %>
