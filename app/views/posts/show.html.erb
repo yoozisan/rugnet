@@ -1,9 +1,10 @@
 <h1>日記詳細画面</h1>
+<p>投稿者:<%=link_to "#{@post.user.name}", user_path(@post.user.id) %></p>
 <p>タイトル: <%= @post.title %></p>
 <p>内容: <%= @post.content %></p>
 <p id="notice"><%= notice %></p>
 <p>
-  <strong>Image:</strong>
+  <strong>画像:</strong>
   <%= image_tag (@post.image.to_s) %>
 </p>
 <% if @post.user.id == current_user.id %>
