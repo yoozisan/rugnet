@@ -16,11 +16,11 @@
 　</div><br>
 　<div class="category">
 　　<%= form.label :カテゴリー %>
-　　<%= form.select :category, student.category.keys %>
+　　<%= form.select :category, Student.categories.keys %>
 　</div><br>
   <div class="school_year">
 　　<%= form.label :学年 %>
-　　<%= form.select :school_year, student.school_year.keys %>
+　　<%= form.select :school_year, Student.school_years.keys %>
 　</div><br>
 
 　<%= form.submit %>
