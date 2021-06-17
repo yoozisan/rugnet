@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_16_083546) do
+ActiveRecord::Schema.define(version: 2021_06_17_014422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,16 @@ ActiveRecord::Schema.define(version: 2021_06_16_083546) do
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
+  create_table "students", force: :cascade do |t|
+    t.text "student_name"
+    t.integer "category", default: 1, null: false
+    t.integer "school_year", default: 1, null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_students_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -69,4 +79,5 @@ ActiveRecord::Schema.define(version: 2021_06_16_083546) do
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "students", "users"
 end
