@@ -2,18 +2,18 @@
 <p><%= notice %></p>
 <table>
   <tr>
+    <th>ユーザー</th>
     <th>生徒名</th>
     <th>カテゴリー</th>
     <th>学年</th>
   </tr>
 <% @student.each do |student| %>
   <tr>
+    <td><%= student.user.name %></td>
     <td><%= student.student_name %></td>
     <td><%= student.category %></td>
     <td><%= student.school_year %></td>
     <td><%= link_to '詳細', student_path(student.id) %></td>
-    <td><%= link_to "編集", edit_student_path(student.id), data: { confirm: '本当に編集していいですか？' } %></td>
-    <td><%= link_to '削除', student_path(student.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
   </tr>
 <% end %>
 </table>
