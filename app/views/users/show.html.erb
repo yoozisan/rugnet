@@ -1,8 +1,10 @@
  <h3>Myプロフィール</h3>
-<%= image_tag(@user.image.to_s) %>
-<%= @user.name %>
-
-<% @users.each do |user| %>
+  <div class="icon">
+    <%= @user.name %><br>
+    <br>
+    <%= image_tag(@user.image.to_s) %>
+  </div>
+  <% @users.each do |user| %>
   <%= link_to post_path(user), class:' post-color','data-turbolinks': false do %>
 
     <div class = 'user_all_index'>

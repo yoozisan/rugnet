@@ -1,0 +1,11 @@
+<h3>以下の内容で、送信する。</h3>
+<%= form_with(model: @student, url: students_path, local: true) do |form| %>
+  <%= form.hidden_field :student_name %>
+  <%= form.hidden_field :category %>
+  <%= form.hidden_field :school_year %>
+  <p>生徒名:<%= @student.student_name %></p>
+  <p>カテゴリー:<%= @student.category %></p>
+  <p>学年:<%= @student.school_year %></p>
+  <%= form.submit  "登録する" %>
+  <%= form.submit "戻る", name: 'back' %>
+<% end %>

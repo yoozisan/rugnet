@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
     get '/users/sign_out', to: 'devise/sessions#destroy'
   end
+  resources :students
   resources :users, only: [:index, :show]
   resources :relationships, only: [:create, :destroy]
   resources :users do
@@ -19,12 +20,12 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
-  # devise_scope :user do
-  #   post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
-  # end
-  # devise_for :users, controllers: {registrations: 'users/registrations',passwords: 'users/passwords'}
-  # resources :users, only: [:index]
   resources :posts do
+    collection do
+      post :confirm
+    end
+  end
+  resources :students do
     collection do
       post :confirm
     end
