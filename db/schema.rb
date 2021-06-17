@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_17_014422) do
+ActiveRecord::Schema.define(version: 2021_06_17_125942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,21 @@ ActiveRecord::Schema.define(version: 2021_06_17_014422) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "records", force: :cascade do |t|
+    t.date "record_at"
+    t.float "body_temperature"
+    t.boolean "is_cough"
+    t.boolean "is_sneeze"
+    t.boolean "is_runny_nose"
+    t.boolean "is_dull"
+    t.boolean "is_family_illness"
+    t.text "attendance"
+    t.bigint "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_records_on_student_id"
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -79,5 +94,6 @@ ActiveRecord::Schema.define(version: 2021_06_17_014422) do
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "records", "students"
   add_foreign_key "students", "users"
 end
