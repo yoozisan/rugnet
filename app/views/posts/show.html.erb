@@ -11,7 +11,6 @@
 <%= link_to "編集", edit_post_path(@post), data: { confirm: '本当に編集していいですか？' } %>
 <%= link_to '削除', post_path(@post), method: :delete, data: { confirm: '本当に削除していいですか？' } %>
 <% end %>
-<%= link_to 'Back', posts_path %>
 <%= link_to '一覧に戻る', posts_path %>
 
 <div class="container">
