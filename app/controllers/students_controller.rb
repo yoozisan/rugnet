@@ -29,7 +29,7 @@ class StudentsController < ApplicationController
   end
 
   def create
-    @student = Student.new(student_params)
+    @student = current_user.students.build(student_params)
     if params[:back]
       render :new
     else
@@ -42,7 +42,7 @@ class StudentsController < ApplicationController
   end
 
   def confirm
-    @student = Student.new(student_params)
+    @student = current_user.students.build(student_params)
     render :new if @student.invalid?
   end
 
