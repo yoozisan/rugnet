@@ -20,15 +20,15 @@
   </div>
   <div class="cough">
     <%= form.label :せき %>
-    <%= form.select :is_cough, [['✖︎',0],['◯',1]], { include_blank: true, selected: 0 } %>
+    <%= form.select :is_cough, Record.is_coughs.keys %>
   </div>
   <div class="sneeze">
     <%= form.label :くしゃみ %>
-    <%= form.select :is_sneeze, [['✖︎',0],['◯',1]], { include_blank: true, selected: 0 } %>
+    <%= form.select :is_sneeze, Record.is_sneezes.keys %>
   </div>
   <div class="runny_nose">
     <%= form.label :鼻水 %>
-    <%= form.select :is_runny_nose, [['✖︎',0],['◯',1]], { include_blank: true, selected: 0 } %>
+    <%= form.select :is_runny_nose, Record.is_runny_noses.keys %>
   </div>
   <div class="dull">
     <%= form.label :だるさ %>
@@ -36,7 +36,7 @@
   </div>
   <div class="family_illness">
     <%= form.label :家族体調不良 %>
-    <%= form.select :is_family_illness, [['✖︎',0],['◯',1]], { include_blank: true, selected: 0 } %>
+    <%= form.select :is_family_illness, Record.is_family_illnesss.keys %>
   </div>
   <div class="attendance">
     <%= form.label :出欠席 %>
