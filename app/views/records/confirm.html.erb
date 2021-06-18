@@ -1,0 +1,25 @@
+<h3>以下の内容で、送信する。</h3>
+<%= form_with(model: @record, url: records_path, local: true) do |form| %>
+  <%= form.hidden_field :student_id %>
+
+  <%= form.hidden_field :record_at %>
+  <%= form.hidden_field :body_temperature %>
+  <%= form.hidden_field :is_cough %>
+  <%= form.hidden_field :is_sneeze %>
+  <%= form.hidden_field :is_runny_nose %>
+  <%= form.hidden_field :is_dull %>
+  <%= form.hidden_field :is_family_illness %>
+  <%= form.hidden_field :attendance %>
+
+  <p>日付:<%= @record.record_at %></p>
+  <p>体温:<%= @record.body_temperature %></p>
+  <p>せき:<%= @record.is_cough %></p>
+  <p>くしゃみ:<%= @record.is_sneeze %></p>
+  <p>鼻水:<%= @record.is_runny_nose %></p>
+  <p>だるさ:<%= @record.is_dull %></p>
+  <p>:家族体調不良<%= @record.is_family_illness %></p>
+  <p>出欠席:<%= @record.attendance %></p>
+
+  <%= form.submit  "登録する" %>
+  <%= form.submit "戻る", name: 'back' %>
+<% end %>

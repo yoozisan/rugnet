@@ -1,0 +1,48 @@
+<%= form_with(model: @record, local: true ,url: choose_new_or_edit_record ) do |form| %>
+  <% if @record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @record.errors.count %>件のエラーがあります。</h2>
+      <ul>
+        <% @record.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="record_date">
+    <%= form.label :日付 %>
+    <%= form.date_field :record_at %>
+  </div>
+  <div class="temperature">
+    <%= form.label :体温 %>
+    <%= form.text_field :body_temperature %>
+  </div>
+  <div class="cough">
+    <%= form.label :せき %>
+    <%= form.select :is_cough, [['✖︎',0],['◯',1]], { include_blank: true, selected: 0 } %>
+  </div>
+  <div class="sneeze">
+    <%= form.label :くしゃみ %>
+    <%= form.select :is_sneeze, [['✖︎',0],['◯',1]], { include_blank: true, selected: 0 } %>
+  </div>
+  <div class="runny_nose">
+    <%= form.label :鼻水 %>
+    <%= form.select :is_runny_nose, [['✖︎',0],['◯',1]], { include_blank: true, selected: 0 } %>
+  </div>
+  <div class="dull">
+    <%= form.label :だるさ %>
+    <%= form.select :is_dull, [['✖︎',0],['◯',1]], { include_blank: true, selected: 0 } %>
+  </div>
+  <div class="family_illness">
+    <%= form.label :家族体調不良 %>
+    <%= form.select :is_family_illness, [['✖︎',0],['◯',1]], { include_blank: true, selected: 0 } %>
+  </div>
+  <div class="attendance">
+    <%= form.label :出欠席 %>
+    <%= form.text_field :attendance %>
+  </div>
+
+　<%= form.submit %>
+<% end %>
+<%= link_to "健康情報一覧にもどる", records_path %>

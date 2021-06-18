@@ -9,13 +9,12 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
     get '/users/sign_out', to: 'devise/sessions#destroy'
   end
-  resources :records
   resources :students
   resources :users, only: [:index, :show]
   resources :relationships, only: [:create, :destroy]
   resources :users do
     member do
-     get :following, :followers
+      get :following, :followers
     end
   end
   resources :posts do
@@ -26,6 +25,7 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
+  resources :records
   resources :students do
     collection do
       post :confirm

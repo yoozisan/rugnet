@@ -1,0 +1,15 @@
+<h1>健康情報詳細画面</h1>
+<p>日付: <%= @record.record_at %></p>
+<p>体温: <%= @record.body_temperature %></p>
+<p>せき: <%= @record.is_cough %></p>
+<p>くしゃみ: <%= @record.is_sneeze %></p>
+<p>鼻水: <%= @record.is_runny_nose %></p>
+<p>だるさ: <%= @record.is_dull %></p>
+<p>家族体調不良: <%= @record.is_family_illness %></p>
+<p>出欠席: <%= @record.attendance %></p>
+
+<% if @record.student.user.id == current_user.id %>
+<%= link_to "編集", edit_record_path(@record), data: { confirm: '本当に編集していいですか？' } %>
+<%= link_to '削除', record_path(@record), method: :delete, data: { confirm: '本当に削除していいですか？' } %>
+<% end %>
+<%= link_to '一覧に戻る', record_path %>

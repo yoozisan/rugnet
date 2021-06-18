@@ -14,6 +14,8 @@
     <td><%= student.category %></td>
     <td><%= student.school_year %></td>
     <td><%= link_to '詳細', student_path(student.id) %></td>
+    <td><%= link_to '健康状態新規登録', new_record_path(student_id: student.id) %></td>
+
   </tr>
 <% end %>
 </table>
