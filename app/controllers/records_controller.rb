@@ -1,13 +1,17 @@
 class RecordsController < ApplicationController
   before_action :set_record, only: [:show, :edit, :update, :destroy]
+  before_action :set_student, only: %i(index edit new create confirm)
 
   def index
-    @record = Record.all
+    # @records = Record.all
+    student = Student.find(params[:student_id])
+    @records = student.records
+    # @records = @records.where(student_id: student.id)
+    # binding.irb
   end
 
   def new
     @record = Record.new
-    @students = Student.all
   end
 
   def edit
@@ -18,7 +22,7 @@ class RecordsController < ApplicationController
 
   def update
     if @record.update(record_params)
-      redirect_to records_path, notice: "健康情報を編集しました！"
+      redirect_to student_records_path, notice: "健康情報を編集しました！"
     else
       render :edit
     end
@@ -26,11 +30,11 @@ class RecordsController < ApplicationController
 
   def destroy
     @record.destroy
-    redirect_to records_path, notice:"健康情報を削除しました！"
+    redirect_to student_records_path, notice:"健康情報を削除しました！"
   end
 
   def create
-    @record = Record.new(record_params)
+    @record = @student.records.build(record_params)
     # @record = @student.records.build(record_params)
     # @student = Student.find_by(id: params[:student_id])
     # @student = current_user.students.records.build(record_params)
@@ -39,7 +43,7 @@ class RecordsController < ApplicationController
       render :new
     else
       if @record.save
-        redirect_to records_path, notice: "健康情報を登録しました！"
+        redirect_to student_records_path, notice: "健康情報を登録しました！"
       else
         render :new
       end
@@ -47,7 +51,7 @@ class RecordsController < ApplicationController
   end
 
   def confirm
-    @record = Record.new(record_params)
+    @record = @student.records.build(record_params)
     # @record = @student.records.build(record_params)
     # @student = Student.find(id: student_id)
     # @student = current_user.students.records.build(record_params)
@@ -62,5 +66,9 @@ class RecordsController < ApplicationController
 
   def set_record
     @record = Record.find(params[:id])
+  end
+
+  def set_student
+    @student = Student.find(params[:student_id])
   end
 end

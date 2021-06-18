@@ -3,4 +3,6 @@ class Record < ApplicationRecord
   validates :record_at, presence: true
   validates :body_temperature, presence: true
   validates :attendance, presence: true
+
+  enum is_dull: { ❌:false, ⭕️:true }
 end

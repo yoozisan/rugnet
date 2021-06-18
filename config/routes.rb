@@ -24,12 +24,13 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
-  resources :records do
-    collection do
-      post :confirm
-    end
-  end
+
   resources :students do
+    resources :records do
+      collection do
+        post :confirm
+      end
+    end
     collection do
       post :confirm
     end

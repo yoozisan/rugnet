@@ -32,7 +32,7 @@
   </div>
   <div class="dull">
     <%= form.label :だるさ %>
-    <%= form.select :is_dull, [['✖︎',0],['◯',1]], { include_blank: true, selected: 0 } %>
+    <%= form.select :is_dull, Record.is_dulls.keys %>
   </div>
   <div class="family_illness">
     <%= form.label :家族体調不良 %>
@@ -47,4 +47,4 @@
 
 　<%= form.submit %>
 <% end %>
-<%= link_to "健康情報一覧にもどる", records_path %>
+<%= link_to "健康情報一覧にもどる", student_records_path %>

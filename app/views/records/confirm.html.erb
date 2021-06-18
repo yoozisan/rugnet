@@ -1,5 +1,5 @@
 <h3>以下の内容で、送信する。</h3>
-<%= form_with(model: @record, url: records_path, local: true) do |form| %>
+<%= form_with(model: @record, url: student_records_path, local: true) do |form| %>
   <%= form.hidden_field :student_id %>
 
   <%= form.hidden_field :record_at %>
