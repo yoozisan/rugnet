@@ -33,6 +33,7 @@ Rails.application.routes.draw do
     end
     collection do
       post :confirm
+      get 'search'
     end
   end
 end
