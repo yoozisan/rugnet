@@ -12,6 +12,13 @@
           <li class="nav-item active">
             <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link' %>
           </li>
+          <li class="nav-item active">
+            <%= link_to '生徒一覧', students_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to 'My profile', user_path(current_user.id), class: 'nav-link' %>
+          </li>
+
       <% else %>
           <li class="nav-item active">
             <%= link_to "新規登録", new_user_registration_path, class: 'nav-link' %>
@@ -50,3 +57,9 @@
     </div>
   </body>
 </html>
+
+<footer>
+  <div id="footer" class="fixed-bottom" style="height:50px; background-color: #343a40; color: #fff;">
+          <p class="text-center">©︎ 2021.yo.rugnet .All Right Reserved</p>
+  </div>
+</footer>

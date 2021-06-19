@@ -6,5 +6,6 @@
 <% if @student.user.id == current_user.id %>
 <%= link_to "編集", edit_student_path(@student), data: { confirm: '本当に編集していいですか？' } %>
 <%= link_to '削除', student_path(@student), method: :delete, data: { confirm: '本当に削除していいですか？' } %>
+<%= link_to '健康状態新規登録', new_student_record_path(student_id: @student.id) %>
 <% end %>
 <%= link_to '一覧に戻る', students_path %>

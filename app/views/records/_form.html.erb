@@ -1,0 +1,50 @@
+<%= form_with(model: @record, local: true ,url: choose_new_or_edit_record ) do |form| %>
+  <% if @record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @record.errors.count %>件のエラーがあります。</h2>
+      <ul>
+        <% @record.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="record_date">
+    <%= form.label :日付 %>
+    <%= form.date_field :record_at %>
+  </div>
+  <div class="temperature">
+    <%= form.label :体温 %>
+    <%= form.text_field :body_temperature %>
+  </div>
+  <div class="cough">
+    <%= form.label :せき %>
+    <%= form.select :is_cough, Record.is_coughs.keys %>
+  </div>
+  <div class="sneeze">
+    <%= form.label :くしゃみ %>
+    <%= form.select :is_sneeze, Record.is_sneezes.keys %>
+  </div>
+  <div class="runny_nose">
+    <%= form.label :鼻水 %>
+    <%= form.select :is_runny_nose, Record.is_runny_noses.keys %>
+  </div>
+  <div class="dull">
+    <%= form.label :だるさ %>
+    <%= form.select :is_dull, Record.is_dulls.keys %>
+  </div>
+  <div class="family_illness">
+    <%= form.label :家族体調不良 %>
+    <%= form.select :is_family_illness, Record.is_family_illnesses.keys %>
+  </div>
+  <div class="attendance">
+    <%= form.label :出欠席 %>
+    <%= form.select :attendance, Record.attendances.keys %>
+  </div>
+
+  <%= form.hidden_field :student_id %>
+
+　<%= form.submit %>
+<% end %>
+<%= link_to "健康情報一覧にもどる", student_records_path %>
