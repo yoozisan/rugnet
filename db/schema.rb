@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2021_06_17_125942) do
     t.boolean "is_runny_nose"
     t.boolean "is_dull"
     t.boolean "is_family_illness"
-    t.text "attendance"
+    t.integer "attendance"
     t.bigint "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

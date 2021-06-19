@@ -8,7 +8,7 @@ class CreateRecords < ActiveRecord::Migration[5.2]
       t.boolean :is_runny_nose
       t.boolean :is_dull
       t.boolean :is_family_illness
-      t.text :attendance
+      t.integer :attendance
       t.references :student, foreign_key: true
 
       t.timestamps

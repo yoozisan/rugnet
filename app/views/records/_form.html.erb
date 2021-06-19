@@ -36,11 +36,11 @@
   </div>
   <div class="family_illness">
     <%= form.label :家族体調不良 %>
-    <%= form.select :is_family_illness, Record.is_family_illnesss.keys %>
+    <%= form.select :is_family_illness, Record.is_family_illnesses.keys %>
   </div>
   <div class="attendance">
     <%= form.label :出欠席 %>
-    <%= form.text_field :attendance %>
+    <%= form.select :attendance, Record.attendances.keys %>
   </div>
 
   <%= form.hidden_field :student_id %>

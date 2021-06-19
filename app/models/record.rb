@@ -5,10 +5,10 @@ class Record < ApplicationRecord
   validates :attendance, presence: true
 
 
-  enum is_cough: { ❌:false, ⭕️:true }
-  enum is_sneeze: { ❌:false, ⭕️:true }
-  enum is_runny_nose: { ❌:false, ⭕️:true }
-  enum is_dull: { ❌:false, ⭕️:true }
-  enum is_family_illness: { ❌:false, ⭕️:true }
-
+  enum is_cough: { なし:false, あり:true }
+  enum is_sneeze: { しない:false, する:true }
+  enum is_runny_nose: { 出ない:false, 出る:true }
+  enum is_dull: { だるくない:false, だるい:true }
+  enum is_family_illness: { いない:false, いる:true }
+  enum attendance: {欠席:0,　出席:1 }
 end
