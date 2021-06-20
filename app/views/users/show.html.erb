@@ -5,16 +5,16 @@
     <%= image_tag(@user.image.to_s) %>
   </div>
   <% @users.each do |user| %>
-  <%= link_to post_path(user), class:' post-color','data-turbolinks': false do %>
+    <%= link_to post_path(user), class:' post-color','data-turbolinks': false do %>
 
-    <div class = 'user_all_index'>
-      <p><%= image_tag(user.image.to_s )%></p>
-      <p>タイトル:<%= user.title %></p>
-      <p>内容:<%= user.content %></p>
-    </div>
+      <div class = 'user_all_index'>
+        <p><%= image_tag(user.image.to_s )%></p>
+        <p>タイトル:<%= user.title %></p>
+        <p>内容:<%= user.content %></p>
+      </div>
 
+    <% end %>
   <% end %>
-<% end %>
 <%= render 'follow_form', user: @user unless current_user == @user %>
 
 <section class="stats">
