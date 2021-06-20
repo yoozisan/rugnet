@@ -2,21 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.new_records {
-  text-align: center;
-  margin: 30px;
-  position: absolute;
-  top: 40%;
-  left: 35%;
-  transform: translateY(-50%);
-  margin: auto;
+.record_center{
+  margin: 0 auto;
 }
-.old_records {
-  text-align: center;
-  margin: 30px;
-  position: absolute;
-  top: 40%;
-  left: 25%;
-  transform: translateY(-50%);
-  margin: auto;
-}
+// .new_records {
+//   text-align: center;
+//   margin: 30px;
+//   position: absolute;
+//   top: 40%;
+//   left: 35%;
+//   transform: translateY(-50%);
+//   margin: auto;
+// }
+// .old_records {
+//   text-align: center;
+//   margin: 30px;
+//   position: absolute;
+//   top: 40%;
+//   left: 25%;
+//   transform: translateY(-50%);
+//   margin: auto;
+// }

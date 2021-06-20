@@ -13,38 +13,38 @@
   <div class="record_date">
     <%= form.label :日付 %>
     <%= form.date_field :record_at %>
-  </div>
+  </div><br>
   <div class="temperature">
     <%= form.label :体温 %>
     <%= form.text_field :body_temperature %>
-  </div>
+  </div><br>
   <div class="cough">
     <%= form.label :せき %>
     <%= form.select :is_cough, Record.is_coughs.keys %>
-  </div>
+  </div><br>
   <div class="sneeze">
     <%= form.label :くしゃみ %>
     <%= form.select :is_sneeze, Record.is_sneezes.keys %>
-  </div>
+  </div><br>
   <div class="runny_nose">
     <%= form.label :鼻水 %>
     <%= form.select :is_runny_nose, Record.is_runny_noses.keys %>
-  </div>
+  </div><br>
   <div class="dull">
     <%= form.label :だるさ %>
     <%= form.select :is_dull, Record.is_dulls.keys %>
-  </div>
+  </div><br>
   <div class="family_illness">
     <%= form.label :家族体調不良 %>
     <%= form.select :is_family_illness, Record.is_family_illnesses.keys %>
-  </div>
+  </div><br>
   <div class="attendance">
     <%= form.label :出欠席 %>
     <%= form.select :attendance, Record.attendances.keys %>
-  </div>
+  </div><br>
 
   <%= form.hidden_field :student_id %>
 
 　<%= form.submit %>
-<% end %>
+<% end %><br>
 <%= link_to "健康情報一覧", student_records_path %>

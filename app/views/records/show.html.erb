@@ -10,7 +10,7 @@
 <p>出欠席: <%= @record.attendance %></p>
 
 <% if @record.student.user_id == current_user.id %>
-<%= link_to "編集", edit_student_record_path(@record.student.id, @record), data: { confirm: '本当に編集していいですか？' } %>
-<%= link_to '削除', student_record_path(@record), method: :delete, data: { confirm: '本当に削除していいですか？' } %>
+<%= link_to "編集", edit_student_record_path(@record.student.id, @record), data: { confirm: '本当に編集していいですか？' } %><br>
+<%= link_to '削除', student_record_path(@record), method: :delete, data: { confirm: '本当に削除していいですか？' } %><br>
 <% end %>
 <%= link_to '一覧に戻る', student_records_path %>

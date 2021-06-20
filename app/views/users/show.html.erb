@@ -7,14 +7,16 @@
     <%= image_tag(@user.image.to_s) %>
   </div>
   <% @users.each do |user| %>
+  <div class="user_hope">
     <%= link_to post_path(user), class:' post-color','data-turbolinks': false do %>
-
+    <div class="user_give">
       <div class = 'user_all_index'>
         <p><%= image_tag(user.image.to_s )%></p>
         <p>タイトル:<%= user.title %></p>
         <p>内容:<%= user.content %></p>
       </div>
-
+    </div>
+  </div>
     <% end %>
   <% end %>
 <%= render 'follow_form', user: @user unless current_user == @user %>
