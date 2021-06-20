@@ -1,24 +1,26 @@
-<h1>日記詳細画面</h1>
-<p>投稿者:<%=link_to "#{@post.user.name}", user_path(@post.user.id) %></p>
-<p>タイトル: <%= @post.title %></p>
-<p>内容: <%= @post.content %></p>
-<p id="notice"><%= notice %></p>
-<p>
-  <strong>画像:</strong>
-  <%= image_tag (@post.image.to_s) %>
-</p>
-<% if @post.user.id == current_user.id %>
-<%= link_to "編集", edit_post_path(@post), data: { confirm: '本当に編集していいですか？' } %>
-<%= link_to '削除', post_path(@post), method: :delete, data: { confirm: '本当に削除していいですか？' } %>
-<% end %>
-<%= link_to '一覧に戻る', posts_path %>
+<div class="new_posts">
+  <h1>日記詳細画面</h1>
+  <p>投稿者:<%=link_to "#{@post.user.name}", user_path(@post.user.id) %></p>
+  <p>タイトル: <%= @post.title %></p>
+  <p>内容: <%= @post.content %></p>
+  <p id="notice"><%= notice %></p>
+  <p>
+    <strong>画像:</strong>
+    <%= image_tag (@post.image.to_s) %>
+  </p>
+  <% if @post.user.id == current_user.id %>
+  <%= link_to "編集", edit_post_path(@post), data: { confirm: '本当に編集していいですか？' } %>
+  <%= link_to '削除', post_path(@post), method: :delete, data: { confirm: '本当に削除していいですか？' } %>
+  <% end %>
+  <%= link_to '一覧に戻る', posts_path %>
 
-<div class="container">
-   <p id="notice"><%= notice %></p>
+  <div class="container">
+     <p id="notice"><%= notice %></p>
+     </div>
+     <p class = 'btn-border-bottom'><p>コメント一覧</p>
+     <div id="comments_area">
+       <%= render partial: 'comments/index', locals: { comments: @comments, post: @post } %>
+     </div>
+     <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
    </div>
-   <p class = 'btn-border-bottom'><p>コメント一覧</p>
-   <div id="comments_area">
-     <%= render partial: 'comments/index', locals: { comments: @comments, post: @post } %>
-   </div>
-   <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
  </div>

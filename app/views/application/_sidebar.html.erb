@@ -1,0 +1,12 @@
+<div class="listings">
+  <div class="listings_channels">
+    <h2 class="listings_header">Menu</h2><br>
+    <ul class="channel_list">
+      <%= sidebar_link_item('Top', root_path) %><br>
+      <%= sidebar_link_item('My Profile', user_path(current_user.id)) %><br>
+      <%= sidebar_link_item('アカウント編集', edit_user_registration_path(current_user.id)) %><br>
+      <%= sidebar_link_item('日記投稿', new_post_path) %><br>
+      <%= sidebar_link_item('生徒登録', new_student_path) %><br>
+    </ul>
+  </div>
+</div>
