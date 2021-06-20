@@ -8,7 +8,7 @@ class RecordsController < ApplicationController
     # @records = student.records
     # @records = @records.where(student_id: student.id)
     # binding.irb
-    @q = @records.ransack(params[:q])
+    @q = Record.ransack(params[:q])
     @records = @q.result(distinct: true)
   end
 

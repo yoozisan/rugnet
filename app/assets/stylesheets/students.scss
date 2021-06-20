@@ -4,5 +4,17 @@
 
 .new_students {
   text-align: center;
-  margin: 30px;
+  position: absolute;
+  top: 35%;
+  left: 30%;
+  transform: translateY(-50%);
+  // margin: auto;
+}
+.old_students {
+  text-align: center;
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  transform: translateY(-50%);
+  // margin: auto;
 }

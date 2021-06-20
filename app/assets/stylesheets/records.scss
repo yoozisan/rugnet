@@ -5,4 +5,18 @@
 .new_records {
   text-align: center;
   margin: 30px;
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  transform: translateY(-50%);
+  margin: auto;
+}
+.old_records {
+  text-align: center;
+  margin: 30px;
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  transform: translateY(-50%);
+  margin: auto;
 }
