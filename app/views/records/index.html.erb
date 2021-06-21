@@ -1,6 +1,14 @@
-<h1>健康管理一覧</h1
+<h1>健康管理一覧</h1>
+<%= search_form_for(@q, url: student_records_path, method: :get) do |f| %>
+  <%= f.label :record_at, "日付" %>
+  <%= f.date_field :record_at_eq %>
+  <%= f.submit "検索" %>
+<% end %>
+
+<div class = "old_records">
 <p><%= notice %></p>
-<table>
+
+<table class="record_center">
   <tr>
     <th>生徒名</th>
     <th>日付</th>
@@ -12,7 +20,6 @@
     <th>家族体調不良</th>
     <th>出欠席</th>
   </tr>
-
 
 <% @records.each do |record| %>
   <tr>
@@ -29,4 +36,5 @@
   </tr>
 <% end %>
 </table>
-<%#= link_to '健康情報を登録する', new_student_record_path %>
+</div><br>
+<%= link_to "生徒一覧に戻る", students_path %>

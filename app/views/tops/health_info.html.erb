@@ -1,0 +1,39 @@
+<h1>健康管理一覧</h1>
+<%= search_form_for(@q, url: health_info_path, method: :get) do |f| %>
+  <%= f.label :record_at, "日付" %>
+  <%= f.date_field :record_at_eq %>
+  <%= f.submit "検索" %>
+<% end %>
+
+<div class = "old_records">
+<p><%= notice %></p>
+<table class="record_center">
+  <tr>
+    <th>生徒名</th>
+    <th>日付</th>
+    <th>体温</th>
+    <th>せき</th>
+    <th>くしゃみ</th>
+    <th>鼻水</th>
+    <th>だるさ</th>
+    <th>家族体調不良</th>
+    <th>出欠席</th>
+  </tr>
+
+<% @records.each do |record| %>
+  <tr>
+    <td><%= record.student.student_name %></td>
+    <td><%= record.record_at %></td>
+    <td><%= record.body_temperature %></td>
+    <td><%= record.is_cough %></td>
+    <td><%= record.is_sneeze %></td>
+    <td><%= record.is_runny_nose %></td>
+    <td><%= record.is_dull %></td>
+    <td><%= record.is_family_illness %></td>
+    <td><%= record.attendance %></td>
+    <td><%= link_to '詳細', student_record_path(record.student, record.id) %></td>
+  </tr>
+<% end %>
+</table>
+</div><br>
+<%= link_to "生徒一覧に戻る", students_path %>

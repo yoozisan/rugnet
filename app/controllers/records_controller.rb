@@ -3,12 +3,21 @@ class RecordsController < ApplicationController
   before_action :set_student, only: %i(index edit new create confirm)
 
   def index
+    # binding.irb
     # @records = Record.all
     student = Student.find(params[:student_id])
     @records = student.records
     # @records = @records.where(student_id: student.id)
     # binding.irb
+    @q = @records.ransack(params[:q])
+    @records = @q.result(distinct: true)
   end
+
+  # def student_health
+  #   @records = Record.all
+  #   @q = Record.ransack(params[:q])
+  #   @records = @q.result(distinct: true)
+  # end
 
   def new
     @record = Record.new

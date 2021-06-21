@@ -1,24 +1,29 @@
+<%= render'application/sidebar' %>
+<div class = "old_posts post_ever">
 <h1>日記一覧</h1>
 <p><%= notice %></p>
-<table>
-  <tr>
-    <th>投稿者</th>
-    <th>タイトル</th>
-    <th>内容</th>
-    <th>画像</th>
-    <th>詳細</th>
-    <th>編集</th>
-    <th>削除</th>
-  </tr>
+  <div class ="post_center">
+    <table class = "hope" border="1">
+      <tr>
+        <th>投稿者</th>
+        <th>タイトル</th>
+        <th>内容</th>
+        <th>画像</th>
+        <th>詳細</th>
+      </tr>
 
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.user.name %></td>
-    <td><%= post.title %></td>
-    <td><%= post.content %></td>
-    <td><%= image_tag(post.image.to_s) %></td>
-    <td><%= link_to '詳細', post_path(post.id) %></td>
-  </tr>
-<% end %>
-</table>
-<%= link_to '新しく日記を投稿する', new_post_path %><br>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.user.name %></td>
+        <td><%= post.title %></td>
+        <td><%= post.content %></td>
+        <td><%= image_tag(post.image.to_s) %></td>
+        <td><%= link_to '詳細', post_path(post.id) %></td>
+      </tr>
+    <% end %>
+    </table><br>
+    <div class="give">
+      <%= link_to '新しく日記を投稿する', new_post_path %><br>
+    </div>
+  </div>
+</div>

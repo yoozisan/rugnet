@@ -4,6 +4,19 @@ class User < ApplicationRecord
       user.password = SecureRandom.urlsafe_base64
     end
   end
+
+  def self.guest_coach
+    find_or_create_by!(email: 'guest_coach@example.com', coach: true) do |coach|
+      coach.password = SecureRandom.urlsafe_base64
+    end
+  end
+
+  def self.guest_admin
+    find_or_create_by!(email: 'guest_admin@example.com', admin: true) do |admin|
+      admin.password = SecureRandom.urlsafe_base64
+    end
+  end
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   mount_uploader :image, ImageUploader

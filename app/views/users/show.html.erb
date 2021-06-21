@@ -1,22 +1,27 @@
- <h3>Myプロフィール</h3>
+<%= render'application/sidebar' %>
+<div class="new_users">
+ <h3>My Profile</h3>
   <div class="icon">
     <%= @user.name %><br>
     <br>
     <%= image_tag(@user.image.to_s) %>
   </div>
   <% @users.each do |user| %>
-  <%= link_to post_path(user), class:' post-color','data-turbolinks': false do %>
-
-    <div class = 'user_all_index'>
-      <p><%= image_tag(user.image.to_s )%></p>
-      <p>タイトル:<%= user.title %></p>
-      <p>内容:<%= user.content %></p>
+  <div class="user_hope">
+    <%= link_to post_path(user), class:' post-color','data-turbolinks': false do %>
+    <div class="user_give">
+      <div class = 'user_all_index'>
+        <p><%= image_tag(user.image.to_s )%></p>
+        <p>タイトル:<%= user.title %></p>
+        <p>内容:<%= user.content %></p>
+      </div>
     </div>
-
+  </div>
+    <% end %>
   <% end %>
-<% end %>
 <%= render 'follow_form', user: @user unless current_user == @user %>
 
 <section class="stats">
   <%= render 'stats' %>
 </section>
+</div>

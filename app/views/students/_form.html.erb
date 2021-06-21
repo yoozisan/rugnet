@@ -9,7 +9,6 @@
     </ul>
   </div>
 <% end %>
-
 　<div class="student_name">
 　　<%= form.label :生徒名 %>
 　　<%= form.text_field :student_name %>
@@ -24,5 +23,5 @@
 　</div><br>
 
 　<%= form.submit %>
-<% end %>
-<%= link_to "生徒一覧", students_path %>
+<% end %><br>
+<%= link_to "生徒一覧に戻る", students_path %>
