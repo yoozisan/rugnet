@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'tops#index'
+  get 'health_info', to: 'tops#health_info'
+
   devise_for :users, :controllers => {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+    post 'users/guest_coach_sign_in', to: 'users/sessions#guest_coach_sign_in'
+    post 'users/guest_admin_sign_in', to: 'users/sessions#guest_admin_sign_in'  
     get '/users/sign_out', to: 'devise/sessions#destroy'
   end
   resources :users, only: [:index, :show]
@@ -31,6 +35,7 @@ Rails.application.routes.draw do
         post :confirm
       end
     end
+
     collection do
       post :confirm
       get 'search'

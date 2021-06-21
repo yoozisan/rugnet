@@ -46,6 +46,11 @@
                     <li class="nav-item active">
                       <%= link_to '生徒一覧', students_path, class: 'nav-link' %>
                     </li>
+                    <% if current_user.coach == true %>
+                      <li class="nav-item active">
+                        <%= link_to '生徒健康情報一覧', health_info_path, class: 'nav-link' %>
+                      </li>
+                    <% end %>
                     <li class="nav-item active">
                       <%= link_to '日記一覧', posts_path, class: 'nav-link' %>
                     </li>

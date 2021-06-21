@@ -1,5 +1,5 @@
 <h1>健康管理一覧</h1>
-<%= search_form_for(@q, url: student_records_path, method: :get) do |f| %>
+<%= search_form_for(@q, url: health_info_path, method: :get) do |f| %>
   <%= f.label :record_at, "日付" %>
   <%= f.date_field :record_at_eq %>
   <%= f.submit "検索" %>
@@ -31,7 +31,7 @@
     <td><%= record.is_dull %></td>
     <td><%= record.is_family_illness %></td>
     <td><%= record.attendance %></td>
-    <td><%= link_to '詳細', student_record_path(@student, record.id) %></td>
+    <td><%= link_to '詳細', student_record_path(record.student, record.id) %></td>
   </tr>
 <% end %>
 </table>
