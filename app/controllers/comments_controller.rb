@@ -43,6 +43,10 @@ class CommentsController < ApplicationController
     end
   end
 
+  def show
+   @comments = @post.comments.includes(:user).all
+  end
+
   private
   def set_post
     @post = Post.find(params[:post_id])
