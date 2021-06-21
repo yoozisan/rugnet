@@ -25,7 +25,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @comments = @post.comments
+    @comments = @post.comments.includes(:user).all
     @comment = @post.comments.build
   end
 
