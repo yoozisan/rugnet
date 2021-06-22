@@ -2,8 +2,6 @@ class Record < ApplicationRecord
   belongs_to :student
   validates :record_at, presence: true
   validates :body_temperature, presence: true
-  validates :attendance, presence: true
-
 
   enum is_cough: { なし:false, あり:true }
   enum is_sneeze: { しない:false, する:true }

@@ -1,6 +1,7 @@
 <%= render'application/sidebar' %>
 <div class="old_students">
 <h1>生徒一覧</h1>
+<p>(生徒の親は詳細から健康情報が登録可能)</p><br>
 <p><%= notice %></p>
 <table class= "student_center">
   <tr>
@@ -15,7 +16,7 @@
     <td><%= student.student_name %></td>
     <td><%= student.category %></td>
     <td><%= student.school_year %></td>
-    <td><%= link_to '詳細(健康情報登録)', student_path(student.id) %></td>
+    <td><%= link_to '生徒詳細', student_path(student.id) %></td>
   </tr>
 <% end %>
 </table><br>
