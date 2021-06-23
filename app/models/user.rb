@@ -2,18 +2,21 @@ class User < ApplicationRecord
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
+      user.name = 'guest_user'
     end
   end
 
   def self.guest_coach
     find_or_create_by!(email: 'guest_coach@example.com', coach: true) do |coach|
       coach.password = SecureRandom.urlsafe_base64
+      coach.name = 'guest_coach'
     end
   end
 
   def self.guest_admin
     find_or_create_by!(email: 'guest_admin@example.com', admin: true) do |admin|
       admin.password = SecureRandom.urlsafe_base64
+      admin.name = 'guest_admin'
     end
   end
 
@@ -30,7 +33,7 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :follower
 
   validates :name, presence: true, length: { maximum: 15}
-  
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   #指定のユーザをフォローする
