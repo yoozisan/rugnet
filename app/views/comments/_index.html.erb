@@ -2,6 +2,8 @@
   <% comments.each do |comment| %>
     <% if comment.id.present? %>
       <div class="comment-content" id ="this_comment_<%= comment.id %>"></div>
+      <hr>
+      <p><%= comment.user.name %></p>
       <p><%= comment.content %></p>
       <p><%= image_tag comment.image.url, class: 'rounded-circle' if comment.image.present?%></p>
       <% if comment.user == current_user %>
