@@ -10,16 +10,18 @@
   </div>
 <% end %>
   <div class="post_title">
-    <%= form.label :title %><br>
+    <%= form.label :タイトル %><br>
     <%= form.text_field :title %>
   </div>
   <div class="post_content">
-    <%= form.label :content %><br>
+    <%= form.label :内容 %><br>
     <%= form.text_area :content %>
   </div><br>
   <div class="post_field">
-    <%= form.label :image %><br>
+    <%= form.label :画像 %><br>
+    <p><%=image_tag(@post.image.to_s) %></p>
     <%= form.file_field :image %>
+    <%= form.hidden_field :image_cache %>
   </div><br>
   <%= form.submit %>
 <% end %><br>
