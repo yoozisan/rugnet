@@ -58,9 +58,12 @@
             子供の成長や練習状況の記録など使い方は様々です。<br>
             皆さんの交流のきっかけを与えてくれるツール。
 </div><br><br>
-<%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "link_color1" %>
-<%= link_to 'ゲスト管理者ログイン（閲覧用）', users_guest_admin_sign_in_path, method: :post, class: "link_color2" %>
-<%= link_to 'ゲストコーチログイン（閲覧用）', users_guest_coach_sign_in_path, method: :post, class: "link_color3" %>
+<% if user_signed_in? %>
+<% elsif %>
+  <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "link_color1" %>
+  <%= link_to 'ゲスト管理者ログイン（閲覧用）', users_guest_admin_sign_in_path, method: :post, class: "link_color2" %>
+  <%= link_to 'ゲストコーチログイン（閲覧用）', users_guest_coach_sign_in_path, method: :post, class: "link_color3" %>
+<% end %>
 <br>
 <br>
 <br>
