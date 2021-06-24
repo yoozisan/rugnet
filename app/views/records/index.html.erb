@@ -2,8 +2,8 @@
 <%= search_form_for(@q, url: student_records_path, method: :get) do |f| %>
 <%= f.label :record_at, "日付" %>
 <%= f.date_field :record_at_eq %>
-<%= f.label :attendance, "出欠席" %>
-<%= f.select :attendance_eq, Record.attendances.keys.to_a, {} %>
+<%= f.label :attendance_eq, "出欠席" %>
+<%= f.select :attendance_eq, Record.attendances{|key,value| [Record.attendances[key],value]} %>
 <%= f.submit "検索" %>
 <% end %>
 
