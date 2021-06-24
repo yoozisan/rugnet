@@ -12,7 +12,7 @@
 
   <div class="record_date">
     <%= form.label :日付 %>
-    <%= form.date_field :record_at %>
+    <%= form.date_field :record_at, value: Time.now.strftime("%Y-%m-%d") %>
   </div><br>
   <div class="temperature">
     <%= form.label :体温 %>

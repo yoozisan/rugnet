@@ -5,7 +5,7 @@
   <%= form.hidden_field :image_cache %>
   <p>タイトル:<%= @post.title %></p>
   <p>本文:<%= @post.content %></p>
-  <p>画像:<%= @post.image %></p>
+  <p>画像:<%=image_tag(@post.image.to_s) %></p>
   <%= form.submit  "登録する" %>
   <%= form.submit "戻る", name: 'back' %>
 <% end %>

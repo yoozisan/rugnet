@@ -2,6 +2,8 @@
 <%= search_form_for(@q, url: health_info_path, method: :get) do |f| %>
   <%= f.label :record_at, "日付" %>
   <%= f.date_field :record_at_eq %>
+  <%= f.label :attendance_eq, "出欠席" %>
+  <%= f.select :attendance_eq, Record.attendances{|key,value| [Record.attendances[key],value]} %>
   <%= f.submit "検索" %>
 <% end %>
 
@@ -18,22 +20,27 @@
     <th>だるさ</th>
     <th>家族体調不良</th>
     <th>出欠席</th>
+    <th>詳細</th>
   </tr>
 
-<% @records.each do |record| %>
-  <tr>
-    <td><%= record.student.student_name %></td>
-    <td><%= record.record_at %></td>
-    <td><%= record.body_temperature %></td>
-    <td><%= record.is_cough %></td>
-    <td><%= record.is_sneeze %></td>
-    <td><%= record.is_runny_nose %></td>
-    <td><%= record.is_dull %></td>
-    <td><%= record.is_family_illness %></td>
-    <td><%= record.attendance %></td>
-    <td><%= link_to '詳細', student_record_path(record.student, record.id) %></td>
-  </tr>
-<% end %>
+<div class="health_box">
+  <% @records.each do |record| %>
+    <div class="health_table">
+      <tr>
+        <td><%= record.student.student_name %></td>
+        <td><%= record.record_at %></td>
+        <td><%= record.body_temperature %></td>
+        <td><%= record.is_cough %></td>
+        <td><%= record.is_sneeze %></td>
+        <td><%= record.is_runny_nose %></td>
+        <td><%= record.is_dull %></td>
+        <td><%= record.is_family_illness %></td>
+        <td><%= record.attendance %></td>
+        <td><%= link_to '詳細', student_record_path(record.student, record.id) %></td>
+      </tr>
+    </div>
+  <% end %>
+</div>
 </table>
 </div><br>
 <%= link_to "生徒一覧に戻る", students_path %>
