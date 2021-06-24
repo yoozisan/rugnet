@@ -19,3 +19,7 @@ ja:
         remember_me: ログインを記憶
       comment:
         content: コメント
+      record:
+        body_temperature: 体温
+      student:
+        student_name: 生徒名
