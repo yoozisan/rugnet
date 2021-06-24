@@ -108,3 +108,22 @@
   // position: absolute;
   right: 40px;
 }
+
+.record_center {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.record_center,
+.record_center th,
+.record_center td {
+  border: 1px solid #ccc;
+}
+.record_center th,
+.record_center td {
+  padding: 10px;
+}
+.record_center th {
+  color: #fff;
+  background: #555;
+  // background: #993741;
+}
