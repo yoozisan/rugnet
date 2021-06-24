@@ -1,7 +1,16 @@
 <%= render'application/sidebar' %>
 <div class="old_students">
 <h1>生徒一覧</h1>
-<p>(生徒の親は詳細から健康情報が登録可能)</p><br>
+<p>(生徒の親は詳細から健康情報が登録可能)</p>
+
+<%= search_form_for @q do |f| %>
+   <%= f.label :student_name, '生徒名' %>
+   <%= f.search_field :student_name_cont %>
+   <%= f.label :school_year, "学年" %>
+   <%= f.select :school_year_eq, Student.school_years.keys.to_a, {} %>
+   <%= f.submit '検索' %>
+ <% end %><br>
+
 <p><%= notice %></p>
 <table class= "student_center">
   <tr>
@@ -10,7 +19,7 @@
     <th>カテゴリー</th>
     <th>学年</th>
   </tr>
-<% @student.each do |student| %>
+<% @students.each do |student| %>
   <tr>
     <td><%= student.user.name %></td>
     <td><%= student.student_name %></td>
