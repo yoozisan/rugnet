@@ -1,9 +1,11 @@
 ja:
   activerecord:
     models:
-      post: 投稿
+      post: 日記
       user: ユーザー
       comment: コメント
+      student: 生徒
+      record: 健康情報
     attributes:
       post:
         title: タイトル
@@ -20,6 +22,15 @@ ja:
       comment:
         content: コメント
       record:
+        record_at: 日付
         body_temperature: 体温
+        is_cough: せき
+        is_sneeze: くしゃみ
+        is_runny_nose: 鼻水
+        is_dull: だるさ
+        is_family_illness: 家族体調不良
+        attendance: 出欠席
       student:
         student_name: 生徒名
+        category: カテゴリー
+        school_year: 学年
