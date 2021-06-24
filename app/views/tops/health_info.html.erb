@@ -2,12 +2,8 @@
 <%= search_form_for(@q, url: health_info_path, method: :get) do |f| %>
   <%= f.label :record_at, "日付" %>
   <%= f.date_field :record_at_eq %>
-  <%= f.submit "検索" %>
-<% end %>
-
-<%= search_form_for(@q, url: health_info_path, method: :get) do |f| %>
   <%= f.label :attendance, "出欠席" %>
-  <%= f.search_field :attendance_cont %>
+  <%= f.select :attendance_eq, Record.attendances.keys.to_a, {} %>
   <%= f.submit "検索" %>
 <% end %>
 
