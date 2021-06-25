@@ -24,8 +24,8 @@ RSpec.describe 'User関連機能',type: :system do
         visit new_user_registration_path
         # find("#sign_up").click
         click_button 'アカウント登録'
-        expect(page).to have_content "Nameを入力してください"
-        expect(page).to have_content "Eメールを入力してください"
+        expect(page).to have_content "名前を入力してください"
+        expect(page).to have_content "メールアドレスを入力してください"
         expect(page).to have_content "パスワードを入力してください"
       end
     end
@@ -47,7 +47,7 @@ RSpec.describe 'User関連機能',type: :system do
         fill_in 'user[email]',with: 'kawai@kawai.com'
         fill_in 'user[password]', with: 'ミスパスワード'
         click_button 'ログイン'
-        expect(page).to have_content 'Eメールまたはパスワードが違います。'
+        expect(page).to have_content 'メールアドレスまたはパスワードが違います。'
         expect(current_path).to have_content '/users/sign_in'
       end
     end
@@ -68,7 +68,6 @@ RSpec.describe 'User関連機能',type: :system do
         end
       end
     end
-
     describe 'その他機能' do
         it 'フォロー一覧機能' do
           visit new_user_session_path
