@@ -90,19 +90,19 @@ RSpec.describe 'User関連機能',type: :system do
           expect(page).to have_content '日記一覧'
           expect(page).to have_content 'My Profile'
         end
-        it 'ゲスト管理者ログイン機能' do
+        it 'ゲストログイン（管理者）機能' do
           visit root_path
           # binding.irb
-          click_on 'ゲスト管理者ログイン（閲覧用）'
+          click_on 'ゲストログイン（管理者）'
           expect(page).to have_content '生徒一覧'
           expect(page).to have_content '日記一覧'
           expect(page).to have_content 'My Profile'
           expect(page).to have_content '管理者画面'
         end
-        it 'ゲストコーチログイン機能' do
+        it 'ゲストログイン（コーチ）機能' do
           visit root_path
           # binding.irb
-          click_on 'ゲストコーチログイン（閲覧用）'
+          click_on 'ゲストログイン（コーチ）'
           expect(page).to have_content '生徒一覧'
           expect(page).to have_content '生徒健康情報一覧'
           expect(page).to have_content '日記一覧'
