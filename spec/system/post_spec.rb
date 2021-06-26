@@ -49,8 +49,8 @@ RSpec.describe '日記管理機能', type: :system do
         # binding.irb
         click_on 'タイトル:今日は誕生日'
         click_on '編集'
-        page.driver.browser.switch_to.alert.accept
         # binding.irb
+        page.driver.browser.switch_to.alert.accept
         expect(page).to have_content '日記を編集する'
         fill_in "post[content]", with: 'やっぱりね'
         fill_in "post[title]", with: '日記を編集しました！'

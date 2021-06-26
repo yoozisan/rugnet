@@ -33,43 +33,6 @@ FactoryBot.define do
     # association :user, factory: :user
     association :student, factory: :student
   end
-  factory :record4, class: Record do
-    record_at { '2025-06-23' }
-    body_temperature { 36.2}
-    is_cough { "なし"}
-    is_sneeze { "する"}
-    is_runny_nose { "出る"}
-    is_dull { "だるくない"}
-    is_family_illness { "いる"}
-    attendance { "出席"}
-    # association :user, factory: :user
-    association :student, factory: :student
-  end
-  factory :record5, class: Record do
-    record_at { '2021-06-23' }
-    body_temperature { 44.0}
-    is_cough { "なし"}
-    is_sneeze { "する"}
-    is_runny_nose { "出る"}
-    is_dull { "だるくない"}
-    is_family_illness { "いる"}
-    attendance { "出席"}
-    # association :user, factory: :user
-    association :student, factory: :student
-  end
-  factory :record6, class: Record do
-    record_at { '2021-06-23' }
-    body_temperature { 30.0}
-    is_cough { "なし"}
-    is_sneeze { "する"}
-    is_runny_nose { "出る"}
-    is_dull { "だるくない"}
-    is_family_illness { "いる"}
-    attendance { "出席"}
-    # association :user, factory: :user
-    association :student, factory: :student
-  end
-
 
   # factory :record2,class: Record do
   #   record_at { '2021-06-10' }
