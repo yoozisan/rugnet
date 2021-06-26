@@ -37,8 +37,6 @@ RSpec.describe '健康情報管理機能', type: :system do
         expect(page).to have_content '欠席'
       end
     end
-  end
-
     context '健康情報登録に失敗した場合' do
       it '画面遷移せずそのまま新規健康情報登録画面にいること' do
         click_link '生徒一覧'
@@ -52,7 +50,7 @@ RSpec.describe '健康情報管理機能', type: :system do
         expect(page).to have_content '健康情報を登録する'
       end
     end
-
+  end
   describe '健康情報編集機能' do
     context '健康情報を編集する場合' do
       it '健康情報が編集される' do
@@ -111,6 +109,50 @@ RSpec.describe '健康情報管理機能', type: :system do
         expect(page).not_to have_content "2021-06-23"
         expect(page).not_to have_content "2021-06-21"
         expect(page).to have_content "欠席"
+      end
+    end
+  end
+  describe 'その他' do
+    context '日付を未来で入力した場合' do
+      it 'バリデーションエラーが発生する' do
+        click_link '生徒一覧'
+        expect(current_path).to have_content "/students"
+        click_on '生徒詳細', match: :first
+        click_on '健康状態新規登録'
+        expect(page).to have_content '健康情報を登録する'
+        fill_in 'record[record_at]',with: '002040-06-21'
+        fill_in 'record[body_temperature]',with: '36.5'
+        click_on 'commit'
+        expect(page).to have_content "1件のエラーがあります。"
+        expect(page).to have_content "日付は未来を入力できません。"
+      end
+    end
+    context '体温を35.0℃より低く入力した場合' do
+      it 'バリデーションエラーが発生する' do
+        click_link '生徒一覧'
+        expect(current_path).to have_content "/students"
+        click_on '生徒詳細', match: :first
+        click_on '健康状態新規登録'
+        expect(page).to have_content '健康情報を登録する'
+        fill_in 'record[record_at]',with: '002021-06-21'
+        fill_in 'record[body_temperature]',with: '34.0'
+        click_on 'commit'
+        expect(page).to have_content "1件のエラーがあります。"
+        expect(page).to have_content "体温は35.0℃より高くなければなりません。"
+      end
+    end
+    context '体温を42℃より高く入力した場合' do
+      it 'バリデーションエラーが発生する' do
+        click_link '生徒一覧'
+        expect(current_path).to have_content "/students"
+        click_on '生徒詳細', match: :first
+        click_on '健康状態新規登録'
+        expect(page).to have_content '健康情報を登録する'
+        fill_in 'record[record_at]',with: '002021-06-21'
+        fill_in 'record[body_temperature]',with: '50.0'
+        click_on 'commit'
+        expect(page).to have_content "1件のエラーがあります。"
+        expect(page).to have_content "体温は42.0℃より低くなければなりません。"
       end
     end
   end

@@ -1,6 +1,5 @@
 require 'rails_helper'
 RSpec.describe 'Admin', type: :system do
-
   let!(:user) { FactoryBot.create(:user) }
   let!(:user2) { FactoryBot.create(:user2) }
 
@@ -34,14 +33,14 @@ RSpec.describe 'Admin', type: :system do
         expect(page).not_to have_content '管理者画面'
       end
     end
-  end
-  context 'ログイン画面の管理者ゲストユーザーボタンから' do
-    it '管理者ページに遷移できる' do
-      visit root_path
-      click_link 'ゲストログイン（管理者）'
-      expect(page).to have_content 'ゲスト管理者としてログインしました。'
-      click_on '管理者画面'
-      expect(current_path).to eq rails_admin_path
+    context 'ログイン画面の管理者ゲストユーザーボタンから' do
+      it '管理者ページに遷移できる' do
+        visit root_path
+        click_link 'ゲストログイン（管理者）'
+        expect(page).to have_content 'ゲスト管理者としてログインしました。'
+        click_on '管理者画面'
+        expect(current_path).to eq rails_admin_path
+      end
     end
   end
 end
